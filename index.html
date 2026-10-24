@@ -1,0 +1,283 @@
+<title>Camelia Al-Najjar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Camelia Al-Najjar, Ph.D. candidate at Case Western Reserve University. Behavioral and experimental economics, behavioral game theory, decision theory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: fixed identity column on the left, research record on the right; stacks to one column on phones. */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --fg: #1a1f26;
+  --muted: #5a6470;
+  --rule: #dde1e6;
+  --accent: #1d6b73;
+  --accent-soft: #e3eff0;
+  --mark: #fff2a8;
+  --font-display: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161b; --surface: #1a2027; --fg: #e3e7ec; --muted: #9aa5b1;
+    --rule: #2c343d; --accent: #6fc2c9; --accent-soft: #1d3236; --mark: #5a4f12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161b; --surface: #1a2027; --fg: #e3e7ec; --muted: #9aa5b1;
+  --rule: #2c343d; --accent: #6fc2c9; --accent-soft: #1d3236; --mark: #5a4f12;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 56px;
+}
+
+/* Identity column */
+.id { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 32px); align-self: start; display: flex; flex-direction: column; gap: 20px; }
+.portrait {
+  width: 132px; height: 132px; max-width: 100%; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 40px; font-weight: 500; letter-spacing: 0.02em;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+h1 { font-family: var(--font-display); font-weight: 500; font-size: 30px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.role { color: var(--muted); font-size: 15px; margin: 6px 0 0; }
+.market {
+  display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 3px;
+}
+.contact { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.contact .mono { font-family: var(--font-mono); font-size: 13px; color: var(--fg); user-select: all; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 14px; font-weight: 500; }
+.cv-btn {
+  display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+  font-weight: 600; font-size: 14px; text-decoration: none;
+  color: var(--bg); background: var(--accent); padding: 9px 16px; border-radius: 4px;
+}
+.cv-btn:hover { filter: brightness(1.08); }
+
+/* Record column */
+main { min-width: 0; display: flex; flex-direction: column; gap: 48px; }
+section { display: flex; flex-direction: column; gap: 16px; }
+h2 {
+  font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin: 0; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+.lead { font-family: var(--font-display); font-size: 19px; line-height: 1.55; margin: 0; max-width: 64ch; }
+p { margin: 0; max-width: 68ch; }
+
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.field-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.jel { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-left: 6px; }
+
+/* Job market paper: the one set-off object on the page */
+.jmp {
+  background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+  padding: 24px 28px; display: flex; flex-direction: column; gap: 14px;
+}
+.jmp-title { font-family: var(--font-display); font-size: 21px; font-weight: 500; line-height: 1.35; margin: 0; text-wrap: balance; }
+.meta { color: var(--muted); font-size: 14px; }
+.abstract { font-size: 15px; line-height: 1.65; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; font-weight: 500; }
+.placeholder { background: var(--mark); color: var(--fg); padding: 0 4px; border-radius: 2px; font-weight: 400; }
+
+.papers { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; }
+.paper { display: flex; flex-direction: column; gap: 4px; }
+.paper-title { font-family: var(--font-display); font-size: 17px; font-weight: 500; line-height: 1.4; }
+.paper-note { font-size: 15px; color: var(--fg); max-width: 68ch; }
+.doi { font-family: var(--font-mono); font-size: 12.5px; }
+
+.agenda { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.agenda li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; }
+.agenda strong { font-weight: 600; }
+
+details { border-top: 1px solid var(--rule); padding-top: 12px; }
+summary { cursor: pointer; font-weight: 500; color: var(--accent); font-size: 15px; }
+details .papers { margin-top: 18px; gap: 14px; }
+details .paper-title { font-size: 15.5px; }
+
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; }
+.teach-item { display: flex; flex-direction: column; gap: 2px; font-size: 15px; }
+.teach-item .yr { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.ref { display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
+.ref strong { font-size: 15px; font-weight: 600; }
+.ref .mono { font-family: var(--font-mono); font-size: 12.5px; overflow-wrap: anywhere; }
+
+footer { color: var(--muted); font-size: 13px; padding-top: 8px; border-top: 1px solid var(--rule); }
+
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 32px 48px; }
+  .id { position: static; }
+  .refs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .fields, .two-col { grid-template-columns: minmax(0, 1fr); }
+  .jmp { padding: 20px 18px; }
+  h1 { font-size: 27px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <aside class="id">
+    <div class="portrait"><img src="headshot.jpg" alt="Camelia Al-Najjar"></div>
+    <div>
+      <h1>Camelia Al-Najjar</h1>
+      <p class="role">Ph.D. Candidate, Systems and Control Engineering<br>Case Western Reserve University</p>
+    </div>
+    <span class="market">On the job market 2026–27</span>
+    <div class="contact">
+      <span class="mono">caa20@case.edu</span>
+      <span>Department of Electrical, Computer, and Systems Engineering<br>10900 Euclid Avenue, Cleveland, OH 44106</span>
+    </div>
+    <a class="cv-btn" href="CV_CameliaAlNajjar.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+    <div class="links">
+      <a href="https://scholar.google.com/citations?user=V1jqs6AAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://orcid.org/0009-0007-3348-9809" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372538" target="_blank" rel="noopener">SSRN</a>
+    </div>
+  </aside>
+
+  <main>
+    <section aria-labelledby="about">
+      <h2 id="about">About</h2>
+      <p class="lead">I study how people decide when probabilities are unknown and when their payoffs depend on others. I build models of these choices and test them by how well they predict behavior they were not fitted to.</p>
+      <p>My work develops dispersion-based models of ambiguity attitudes and other-regarding preferences, and compares them with leading benchmarks such as cumulative prospect theory and the Nash equilibrium in out-of-sample tests on incentivized experimental data. I estimate the models by maximum likelihood and publish my data and code. I hold an M.S. in Computer Engineering from Texas A&amp;M University, where I was a Fulbright Scholar, and a B.S. in Electrical Engineering from the University of Jordan. I expect to complete my Ph.D. in May 2027.</p>
+      <div class="fields">
+        <div class="field-group">
+          <span class="field-label">Primary fields</span>
+          <ul class="field-list">
+            <li>Behavioral and Experimental Economics<span class="jel">D91 C91</span></li>
+            <li>Behavioral Game Theory<span class="jel">C72 C92</span></li>
+          </ul>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Secondary fields</span>
+          <ul class="field-list">
+            <li>Decision Theory<span class="jel">D81</span></li>
+            <li>Mathematical and Quantitative Methods<span class="jel">C61</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="jmp-h">
+      <h2 id="jmp-h">Job market paper</h2>
+      <article class="jmp">
+        <p class="jmp-title">Game Geometric Dispersion Model with Comparative Out-of-Sample Empirical Study in Other-Regarding Preferences</p>
+        <p class="meta">with Behnam Malakooti · Second-round revision, <i>IEEE Transactions on Systems, Man, and Cybernetics: Systems</i></p>
+        <p class="abstract">The Nash equilibrium assumes that players care only about their own payoffs, yet experiments show that opponents' payoffs also shape choices. Existing other-regarding models are either linear in payoff differences or impose a single nonlinear form whether a player is ahead or behind. We propose the Game-Geometric Dispersion (G-GD) model, which applies separate nonlinear adjustments to the advantaged and disadvantaged branches based on the geometric dispersion of all players' payoffs. With two parameters, G-GD represents self-interest and four types of other-regarding preferences, and it adds negligible cost to computing the equilibrium. Using 80 observed choice distributions in three datasets from four published experiments, we compare G-GD with the Nash equilibrium and three leading other-regarding models in repeated out-of-sample tests. G-GD attains the highest mean out-of-sample log-likelihood in all three datasets, and its advantage is significant at the 5% level. Estimated preference types differ by game category, suggesting that other-regarding behavior depends on strategic context.</p>
+        <div class="paper-links">
+          <a href="JMP_AlNajjar.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+          <a href="https://doi.org/10.2139/ssrn.6372538" target="_blank" rel="noopener">Online supplement, code and data</a>
+        </div>
+      </article>
+    </section>
+
+    <section aria-labelledby="pubs">
+      <h2 id="pubs">Publications</h2>
+      <ul class="papers">
+        <li class="paper">
+          <span class="paper-title">Systems Analysis of Decision-Making Under Ambiguity with Comparative Out-of-Sample Experimental Study of Geometric Dispersion Theory and Cumulative Prospect Theory</span>
+          <span class="meta">with Behnam Malakooti · <i>IEEE Transactions on Systems, Man, and Cybernetics: Systems</i>, 55(8): 5192–5206, 2025</span>
+          <span class="paper-note">Introduces Ambiguity GDT (A-GDT). In an incentivized experiment with 310 participants making 150 choices each, A-GDT predicts held-out choices better than CPT, SEU, α-maxmin EU and vector EU.</span>
+          <span class="paper-links"><a class="doi" href="https://doi.org/10.1109/TSMC.2025.3564865" target="_blank" rel="noopener">doi:10.1109/TSMC.2025.3564865</a> <a class="doi" href="https://doi.org/10.21227/a8qn-d389" target="_blank" rel="noopener">Replication data</a></span>
+        </li>
+        <li class="paper">
+          <span class="paper-title">Basic Geometric Dispersion Theory of Decision Making Under Risk: Asymmetric Risk Relativity, New Predictions of Empirical Behaviors, and Risk Triad</span>
+          <span class="meta">with Behnam Malakooti and Mohamed Komaki · <i>Decision Analysis</i>, 18(1): 41–77, 2021</span>
+          <span class="paper-links"><a class="doi" href="https://doi.org/10.1287/deca.2019.0404" target="_blank" rel="noopener">doi:10.1287/deca.2019.0404</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="wp">
+      <h2 id="wp">Working paper</h2>
+      <ul class="papers">
+        <li class="paper">
+          <span class="paper-title">Geometric Dispersion Explanation of Prisoner's Dilemma with Behavioral Out-of-Sample Comparisons to Game Models</span>
+          <span class="meta">with Behnam Malakooti · 2026 · Draft available on request</span>
+          <span class="paper-note">Applies G-GD to the one-shot Prisoner's Dilemma. G-GD predicts cooperation rates out of sample better than the Nash equilibrium, quantal response equilibrium, and the Fehr–Schmidt, Charness–Rabin and Bolton–Ockenfels models.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="rip">
+      <h2 id="rip">Research in progress</h2>
+      <ul class="agenda">
+        <li><span><strong>Treatment choice under ambiguity.</strong> A field test of A-GDT on how patients accept treatment plans with uncertain outcomes and costs.</span></li>
+        <li><span><strong>Heterogeneity across domains.</strong> Within-subject estimation of risk, ambiguity and social preferences, testing whether one dispersion structure explains all three.</span></li>
+        <li><span><strong>Model selection for behavioral theories.</strong> A general out-of-sample protocol for comparing choice models, applied to public experimental datasets.</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="other">
+      <h2 id="other">Earlier work in optimization and engineering</h2>
+      <details>
+        <summary>Nine journal articles, a book chapter and a conference paper (2006–2017)</summary>
+        <ul class="papers">
+          <li class="paper"><span class="paper-title">Multi-Objective Energy Aware Multiprocessor Scheduling Using Bat Intelligence</span><span class="meta">with B. Malakooti, S. Sheikh and H. Kim · <i>Journal of Intelligent Manufacturing</i>, 24(4): 805–819, 2013</span></li>
+          <li class="paper"><span class="paper-title">Hybrid-LP: Finding Advanced Starting Points for Simplex, and Pivoting LP Methods</span><span class="meta">with B. Malakooti · <i>Computers &amp; Operations Research</i>, 38(2): 427–434, 2011</span></li>
+          <li class="paper"><span class="paper-title">Multi-Objective OLSR for Proactive Routing in MANET with Delay, Energy, and Link Lifetime Predictions</span><span class="meta">with Z. Guo, S. Malakooti, S. Sheikh and B. Malakooti · <i>Applied Mathematical Modelling</i>, 35(3): 1413–1426, 2011</span></li>
+          <li class="paper"><span class="paper-title">Energy Aware Proactive Optimized Link State Routing in Mobile Ad-Hoc Networks</span><span class="meta">with Z. Guo, S. Malakooti, S. Sheikh, M. Lehman and B. Malakooti · <i>Applied Mathematical Modelling</i>, 35(10): 4715–4729, 2011</span></li>
+          <li class="paper"><span class="paper-title">Mobile Ad Hoc Network Broadcasting: A Multi-Criteria Approach</span><span class="meta">with B. J. Barritt, S. Sheikh and B. Malakooti · <i>International Journal of Communication Systems</i>, 24(4): 438–460, 2011</span></li>
+          <li class="paper"><span class="paper-title">The Complex Interior-Boundary Method for Linear and Nonlinear Programming with Linear Constraints</span><span class="meta">with B. Malakooti · <i>Applied Mathematics and Computation</i>, 216(7): 1903–1917, 2010</span></li>
+          <li class="paper"><span class="paper-title">Mobile Ad Hoc Network Proactive Routing with Delay Prediction Using Neural Network</span><span class="meta">with Z. Guo, S. Sheikh, H. Kim and B. Malakooti · <i>Wireless Networks</i>, 16(6): 1601–1620, 2010</span></li>
+          <li class="paper"><span class="paper-title">A Class of Models for Microgrid Optimization</span><span class="meta">with S. Sheikh, M. Komaki, A. Altowijri and B. Malakooti · In <i>Big Data Analytics Using Multiple Criteria Decision-Making Models</i>, CRC Press, 2017, pp. 155–174</span></li>
+          <li class="paper"><span class="paper-title">A Service Provider's Approach for Improving Performance of Aggregate Voice-over-IP Traffic</span><span class="meta">with A. L. N. Reddy · International Workshop on Quality of Service (IWQoS), 2006</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <section aria-labelledby="teach">
+      <h2 id="teach">Teaching</h2>
+      <p><strong>Teaching fields:</strong> Decision Theory; Behavioral Economics; Game Theory; Mathematical Methods and Optimization; Quantitative Methods (Stata, R).</p>
+      <div class="two-col">
+        <div class="teach-item"><span>Teaching Assistant and guest lecturer, Engineering Optimization (EECS 346), CWRU</span><span class="yr">2014</span></div>
+        <div class="teach-item"><span>Design Instructor, Senior Project (EECS 398/399), CWRU</span><span class="yr">2012–2014</span></div>
+        <div class="teach-item"><span>Faculty Lab Instructor, Digital Logic and Electric Circuits, University of Jordan</span><span class="yr">2002–2003</span></div>
+        <div class="teach-item"><span>Advanced Professional Development for University Teaching (UNIV 401), CWRU</span><span class="yr">2020</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="refs-h">
+      <h2 id="refs-h">References</h2>
+      <div class="refs">
+        <div class="ref"><strong>Behnam Malakooti</strong><span>Professor, Electrical, Computer, and Systems Engineering</span><span>Case Western Reserve University</span><span class="mono">behnam.malakooti@case.edu</span></div>
+        <div class="ref"><strong>Roman Sheremeta</strong><span>Associate Professor of Economics, Weatherhead School of Management</span><span>Case Western Reserve University</span><span class="mono">roman.sheremeta@case.edu</span></div>
+        <div class="ref"><strong>Vira Chankong</strong><span>Professor, Electrical, Computer, and Systems Engineering</span><span>Case Western Reserve University</span><span class="mono">vira.chankong@case.edu</span></div>
+      </div>
+    </section>
+
+    <footer>Updated October 2026</footer>
+  </main>
+</div>
